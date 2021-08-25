@@ -1,8 +1,8 @@
 import { Component } from 'react';
-import Statistics from './Componenets/Statistics/Statistics';
-import FeedbackOptions from './Componenets/FeedbackOptions/FeedbackOptions';
-import Section from './Componenets/Section/Section';
-import Notification from './Componenets/Notification/Notification';
+import Statistics from './Components/Statistics/Statistics';
+import FeedbackOptions from './Components/FeedbackOptions/FeedbackOptions';
+import Section from './Components/Section/Section';
+import Notification from './Components/Notification/Notification';
 
 
 class App extends Component {
@@ -15,7 +15,7 @@ class App extends Component {
   countTotalFeedback = () => Object.values(this.state).reduce((acc, value) => acc + value);
 
   countPositiveFeedbackPercentage = () => {
-    const total = Object.values(this.state).reduce((acc, value) => acc + value);
+    const total = this.countTotalFeedback();
     const percentage = Math.round(this.state.good / total * 100);
     return percentage;
   };
